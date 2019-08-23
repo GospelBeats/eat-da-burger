@@ -1,0 +1,60 @@
+<div class="w3-row w3-center w3-indigo">
+<img src="/assets/img/burger.png" alt="burger image"> 
+</div>
+
+<div class="w3-container w3-row">
+
+  
+ <div class="container w3-padding w3-bottombar" style="max-width: 500px; margin: auto; margin-bottom: 40px">
+ 
+    <form action="/burgers" method="POST"> 
+    <p><label class="w3-text-teal"><b>Enter Name of Burger</b></label></p>
+    <p><input class="w3-input w3-border w3-sand" id="name" name="burger_name" type="text"></p> 
+    <p><button class="w3-btn w3-teal">Add Burger</button></p>
+    </form>
+    
+</div>
+
+</div> <!-- row -->
+
+
+<div class="w3-container w3-row">
+
+
+<div class="w3-container w3-half w3-border">
+<div><h1 class="w3-center w3-pale-blue">New Burgers</h1></div>
+<div>new burger</div>
+
+</div> <!-- half -->
+
+<div class="w3-container w3-half w3-border">
+<div><h1 class="w3-center w3-pale-blue">Devoured Burgers</h1></div>
+
+	<div>
+	{{#each burgers}}
+          {{#unless this.devoured}}
+            <div>
+              <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
+                <button type="submit"> {{this.burger_name}}</button>
+              </form>
+            </div>
+          {{/unless}}
+        {{/each}}
+	</div>
+
+	<div>
+	 {{#each burgers}}
+          {{#if this.devoured}}
+            <div class='burgerEaten'>
+              <div>
+                {{this.burger_name}}
+              </div>
+            </div>
+          {{/if}}
+        {{/each}}
+	</div>
+
+</div> <!-- half -->
+
+
+</div> <!-- row -->
