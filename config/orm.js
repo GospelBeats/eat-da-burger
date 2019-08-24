@@ -1,11 +1,11 @@
-const connection = require("./connection");
+ const connection = require("./connection");
 
-let connection = require('../config/connection.js');
+ //let connection = require('../config/connection.js');
 
 
 const orm = {
 
-    selectAll: function (cb) {
+    selectAll: function (burger, cb) {
         let queryString = "SELECT * FROM burgers";
         connection.query(queryString, function (err, result) {
             if (err) {

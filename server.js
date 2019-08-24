@@ -2,7 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
@@ -22,4 +22,8 @@ const routes = require('./controllers/burgers_controller.js');
 
 app.use('/', routes);
 
-app.listen(port);
+
+
+app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
