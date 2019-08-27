@@ -3,7 +3,6 @@
 </div>
 
 <div class="w3-container w3-row">
-
   
  <div class="container w3-padding w3-bottombar" style="max-width: 500px; margin: auto; margin-bottom: 40px">
  
@@ -17,9 +16,7 @@
 
 </div> <!-- row -->
 
-
 <div class="w3-container w3-row">
-
 
 <div class="w3-container w3-half w3-border">
 <div><h1 class="w3-center w3-pale-blue">New Burgers</h1></div>
@@ -32,13 +29,13 @@
 
 	<div>
 	{{#each burgers}}
-          {{#unless this.devoured}}
+          {{#if this.devoured}}
             <div>
               <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
                 <button type="submit"> {{this.burger_name}}</button>
               </form>
             </div>
-          {{/unless}}
+          {{/if}}
         {{/each}}
 	</div>
 
@@ -47,7 +44,7 @@
           {{#if this.devoured}}
             <div class='burgerEaten'>
               <div>
-                {{this.burger_name}}
+                {{this.burger_name}} 
               </div>
             </div>
           {{/if}}
@@ -56,12 +53,5 @@
 
 </div> <!-- half -->
 
-
 </div> <!-- row -->
 
-<script>
-
-
-
-  
-</script>

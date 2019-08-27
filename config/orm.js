@@ -10,14 +10,14 @@ const orm = {
         connection.query(queryString, function (err, result) {
             if (err) {
                 throw err;
-            }
+            } console.log(result);
             cb(result);
         });
     },
 
     insertOne: function (burger, cb) {
-        let queryString = "INSERT INTO burgers (burger_name) VALUES (?)";
-        connection.query(queryString, [burger], function (err, result) {
+        let queryString = "INSERT INTO burgers (burger_name, devoured) VALUES (?, ?)";
+        connection.query(queryString, [burger, false], function (err, result) {
             if (err) {
                 throw err;
             }
