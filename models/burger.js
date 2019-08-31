@@ -22,7 +22,7 @@ let burger = {
     orm.updateOne('burgers', objColVals, condition, function(res) {
       cb(res);
     });
-  }
+  },
 
 
   // Delete a burger from the db.

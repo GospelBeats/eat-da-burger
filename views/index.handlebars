@@ -26,7 +26,7 @@
  {{#each burgers}}
     {{#unless devoured}}
        {{this.id}} - {{this.burger_name}} 
-        <button type="button" class="w3-btn w3-button" id ="eatbutton" data-id="{{this.id}}" data-newDevoured="{{devour}}"></button>
+        <button type="button" class="w3-btn w3-button w3-orange w3-round w3-border" id ="eatbutton" data-id="{{this.id}}" data-newDevoured="{{devour}}">Delete</button><br><br>
     {{/unless}}
  {{/each}}
 </div>
