@@ -26,7 +26,20 @@
  {{#each burgers}}
     {{#unless devoured}}
        {{this.id}} - {{this.burger_name}} 
-        <button type="button" class="w3-btn w3-button w3-orange w3-round w3-border" id ="eatbutton" data-id="{{this.id}}" data-newDevoured="{{devour}}">Delete</button><br><br>
+
+       <form action="/burgers/{{this.id}}?_method=post" method="POST" class="devour-form button-size">
+    <input input type="hidden" class="burger_id" type="text" value={{this.id}}><br>
+    <button type="submit" class="btn btn-default">Devour it!</button>
+</form>
+
+        {{!-- <form action="/burgers/{{this.id}}" method="PUT">
+                <button class="w3-btn w3-button w3-orange w3-round w3-border" id="eatbutton" type="button" type="submit">Delete 
+                  {{this.burger_name}} 
+                  </button><br><br>
+              </form> --}}
+
+        {{!-- <button  class="w3-btn w3-button w3-orange w3-round w3-border" id ="eatbutton" data-id="{{this.id}}" data-newDevoured="{{devour}}">Delete</button><br><br> --}}
+
     {{/unless}}
  {{/each}}
 </div>
